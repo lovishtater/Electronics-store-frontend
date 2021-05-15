@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ImageHelper from "./helper/ImageHelper";
 import { Redirect } from "react-router-dom";
 import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
+import '../styles.css';
 
 const Card = ({
   product,
@@ -57,6 +58,8 @@ const Card = ({
     );
   };
   return (
+   <div class="card-columns">
+
     <div className="card text-light bg-info border border-white rounded ">
       <div className="card-header lead">{cartTitle}</div>
       <div className="card-body">
@@ -72,6 +75,8 @@ const Card = ({
         </div>
       </div>
     </div>
+   </div>
+   
   );
 };
 
