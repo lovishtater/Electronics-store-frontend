@@ -58,7 +58,7 @@ const Card = ({
     );
   };
   return (
-   <div class="card-columns">
+  //  <div class="card-columns">
 
     <div className="card text-light bg-info border border-white rounded ">
       <div className="card-header lead">{cartTitle}</div>
@@ -75,7 +75,7 @@ const Card = ({
         </div>
       </div>
     </div>
-   </div>
+  //  </div>
    
   );
 };
