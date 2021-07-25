@@ -3,6 +3,10 @@ import Base from "../core/Base";
 import { isAutheticated } from "../auth/helper";
 import { Link } from "react-router-dom";
 import { createCategory } from "./helper/adminapicall";
+import AdminLeftPanel from "./AdminLeftPanel";
+import Button from '@material-ui/core/Button';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 const AddCategory = () => {
   const [name, setName] = useState("");
@@ -41,10 +45,16 @@ const AddCategory = () => {
     });
   };
 
+  const Alert = (props) => {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
   const successMessage = () => {
-    if (success) {
-      return <h4 className="text-success">Category created successfully</h4>;
-    }
+      return <Snackbar open={success} autoHideDuration={6000}  >
+              <Alert  severity="success">
+              Category created successfully!
+            </Alert>
+          </Snackbar>
   };
 
   const warningMessage = () => {
@@ -68,7 +78,7 @@ const AddCategory = () => {
         />
         <button onClick={onSubmit} className="btn btn-outline-info">
           Create Category
-        </button>
+        </button>    
       </div>
     </form>
   );
@@ -77,10 +87,13 @@ const AddCategory = () => {
     <Base
       title="Create a category here"
       description="Add a new category for new products"
-      className="container bg-info p-4"
+      className="container-fluid  p-4"
     >
       <div className="row bg-white rounded">
-        <div className="col-md-8 offset-md-2">
+      <div className="col-3"> 
+      <AdminLeftPanel />
+      </div>
+        <div className="col-9">
           {successMessage()}
           {warningMessage()}
           {myCategoryForm()}

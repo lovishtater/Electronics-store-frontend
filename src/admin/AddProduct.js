@@ -3,6 +3,7 @@ import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { getCategories, createaProduct } from "./helper/adminapicall";
 import { isAutheticated } from "../auth/helper/index";
+import AdminLeftPanel from "./AdminLeftPanel";
 
 const AddProduct = () => {
   const { user, token } = isAutheticated();
@@ -167,13 +168,16 @@ const AddProduct = () => {
     <Base
       title="Add a product here!"
       description="Welcome to product creation section"
-      className="container bg-info p-4"
+      className="container-fluid p-4"
     >
       <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
         Admin Home
       </Link>
       <div className="row bg-light text-dark rounded">
-        <div className="col-md-8 offset-md-2">
+        <div className="col-3"> 
+      <AdminLeftPanel />
+      </div>
+        <div className="col-9">
           {successMessage()}
           {createProductForm()}
         </div>

@@ -3,6 +3,7 @@ import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { isAutheticated } from "../auth/helper";
 import { getCategories } from "./helper/adminapicall";
+import AdminLeftPanel from "./AdminLeftPanel";
 
 const ManageCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -30,20 +31,18 @@ const ManageCategories = () => {
         <span className="">Admin Home</span>
       </Link>
       <div className="row">
-        <div className="col-12">
+        <div className="col-3"> 
+      <AdminLeftPanel />
+      </div>
+        <div className="col-9">
           <h2 className="text-center text-dark my-3">Total 3 products</h2>
           {categories.map((category, index) => {
             return (
-              <h3 className="text-dark" key={index}>
-                {category.name}
-              </h3>
-            );
-          })}
-          <div className="row text-center mb-2 ">
-            <div className="col-4">
-              <h3 className="text-dark text-left">I write code</h3>
+              <div className="row text-center mb-2 ">
+            <div className="col-7">
+              <h6 className="text-dark text-left">{category.name}</h6>
             </div>
-            <div className="col-4">
+            <div className="col-1">
               <Link
                 className="btn btn-success"
                 to={`/admin/product/update/productId`}
@@ -51,12 +50,15 @@ const ManageCategories = () => {
                 <span className="">Update</span>
               </Link>
             </div>
-            <div className="col-4">
+            <div className="col-1">
               <button onClick={() => {}} className="btn btn-danger">
                 Delete
               </button>
             </div>
           </div>
+            );
+          })}
+          
         </div>
       </div>
     </Base>

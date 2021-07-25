@@ -1,47 +1,15 @@
 import React from "react";
 import Base from "../core/Base";
 import { isAutheticated } from "../auth/helper/index";
-import { Link } from "react-router-dom";
+import AdminLeftPanel from "../admin/AdminLeftPanel";
+
 
 const AdminDashBoard = () => {
   const {
     user: { name, email, role }
   } = isAutheticated();
 
-  const adminLeftSide = () => {
-    return (
-      <div className="card">
-        <h4 className="card-header bg-light text-dark">Admin Navigation</h4>
-        <ul className="list-group">
-          <li className="list-group-item">
-            <Link to="/admin/create/category" className="nav-link text-success">
-              Create Categories
-            </Link>
-          </li>
-          <li className="list-group-item">
-            <Link to="/admin/categories" className="nav-link text-success">
-              Manage Categories
-            </Link>
-          </li>
-          <li className="list-group-item">
-            <Link to="/admin/create/product" className="nav-link text-success">
-              Create Product
-            </Link>
-          </li>
-          <li className="list-group-item">
-            <Link to="/admin/products" className="nav-link text-success">
-              Manage Products
-            </Link>
-          </li>
-          <li className="list-group-item">
-            <Link to="/admin/orders" className="nav-link text-success">
-              Manage Orders
-            </Link>
-          </li>
-        </ul>
-      </div>
-    );
-  };
+ 
 
   const adminRightSide = () => {
     return (
@@ -69,7 +37,9 @@ const AdminDashBoard = () => {
       className="container-fluid p-4"
     >
       <div className="row">
-        <div className="col-3">{adminLeftSide()}</div>
+        <div className="col-3">
+        <AdminLeftPanel />
+        </div>
         <div className="col-9">{adminRightSide()}</div>
       </div>
     </Base>
