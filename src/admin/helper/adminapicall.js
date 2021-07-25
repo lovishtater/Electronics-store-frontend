@@ -101,3 +101,5 @@ export const updateProduct = (productId, userId, token, product) => {
     })
     .catch(err => console.log(err));
 };
+
+
