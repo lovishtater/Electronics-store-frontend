@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
-import { API } from "../backend";
+// import { API } from "../backend";
 import Base from "./Base";
-import Card from "./Card";
+import Card from "./ProductCard";
 import { getProducts } from "./helper/coreapicalls";
+import { Box, Grid, Container, Paper } from "@material-ui/core";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -25,7 +26,18 @@ export default function Home() {
 
   return (
     <Base title="Home Page" description="Welcome to the Vijay Electronics">
-      <div className="row text-center">
+    <Box>
+      {/* <Grid container xs={4}>
+        <Paper>Item 1</Paper>
+        <Paper>Item 2</Paper>
+        <Paper>Item 3</Paper>
+        <Paper>Item 1</Paper>
+        <Paper>Item 2</Paper>
+        <Paper>Item 3</Paper>
+      
+      </Grid>
+       <Grid item xs={8}> */}
+        <div className="row text-center">
         <h1 className="text-dark">All our products</h1>
         <div className="row">
           {products.map((product, index) => {
@@ -37,6 +49,9 @@ export default function Home() {
           })}
         </div>
       </div>
+      {/* </Grid> */}
+    </Box>
+      
 
     </Base>
   );

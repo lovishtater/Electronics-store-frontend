@@ -4,7 +4,6 @@ import { isAutheticated } from "../auth/helper";
 import { Link } from "react-router-dom";
 import { createCategory } from "./helper/adminapicall";
 import AdminLeftPanel from "./AdminLeftPanel";
-import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
@@ -90,10 +89,10 @@ const AddCategory = () => {
       className="container-fluid  p-4"
     >
       <div className="row bg-white rounded">
-      <div className="col-3"> 
+      <div className="col-lg-3 col-m-3 col-s-12 mb-3"> 
       <AdminLeftPanel />
       </div>
-        <div className="col-9">
+        <div className="  border col-lg-9 col-m-9 col-s-12 ">
           {successMessage()}
           {warningMessage()}
           {myCategoryForm()}

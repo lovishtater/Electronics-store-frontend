@@ -7,6 +7,8 @@ import {
   updateProduct
 } from "./helper/adminapicall";
 import { isAutheticated } from "../auth/helper/index";
+import AdminLeftPanel from "./AdminLeftPanel";
+
 
 const UpdateProduct = ({ match }) => {
   const { user, token } = isAutheticated();
@@ -203,7 +205,10 @@ const UpdateProduct = ({ match }) => {
         Admin Home
       </Link>
       <div className="row bg-light text-dark rounded">
-        <div className="col-md-8 offset-md-2">
+      <div className="col-lg-3 col-m-3 col-s-12 mb-3"> 
+      <AdminLeftPanel />
+      </div>
+        <div className=" border col-lg-9 col-m-9 col-s-12 ">
           {successMessage()}
           {createProductForm()}
         </div>

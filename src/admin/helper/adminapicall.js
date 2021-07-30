@@ -28,10 +28,24 @@ export const getCategories = () => {
     .catch(err => console.log(err));
 };
 
+export const removeCategory = (userId, token, categoryId) => {
+  return fetch(`${API}/category/${categoryId}/${userId}`, {
+    method: "DELETE", 
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    }
+  })
+    .then(response => {
+      return response.json();
+    })
+    .catch(err => console.log(err));
+};
 //products calls
 
 //create a product
-export const createaProduct = (userId, token, product) => {
+export const createaProduct = ( product,userId, token) => {
   return fetch(`${API}/product/create/${userId}`, {
     method: "POST",
     headers: {

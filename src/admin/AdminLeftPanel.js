@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
         <Link className="btn btn-success " to="/admin/dashboard">
         Admin Home
       </Link>
-        <ul className="list-group">
+        <ul className="list-group text-center">
           <li className="list-group-item">
             <Link to="/admin/create/category" className="nav-link text-success">
               Create Categories

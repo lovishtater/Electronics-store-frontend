@@ -63,7 +63,12 @@ const StripeCheckout = ({
         />
        
     ):(
-<h1>Please login to continue</h1>
+        <>
+        <h1>Please login to continue</h1>
+        <Link to="/signin">
+        <button className="btn btn-warning">Signin</button>
+        </Link>
+        </>
     )
     }
     return (

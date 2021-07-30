@@ -92,7 +92,7 @@ const AddProduct = () => {
     <form>
       <span>Post photo</span>
       <div className="form-group">
-        <label className="btn btn-block btn-success">
+        <label className="btn rounded btn-block btn-success">
           <input
             onChange={handleChange("photo")}
             type="file"
@@ -174,10 +174,10 @@ const AddProduct = () => {
         Admin Home
       </Link>
       <div className="row bg-light text-dark rounded">
-        <div className="col-3"> 
+      <div className="col-lg-3 col-m-3 col-s-12 mb-3"> 
       <AdminLeftPanel />
       </div>
-        <div className="col-9">
+        <div className=" border col-lg-9 col-m-9 col-s-12 ">
           {successMessage()}
           {createProductForm()}
         </div>

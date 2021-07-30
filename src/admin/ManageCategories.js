@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { isAutheticated } from "../auth/helper";
-import { getCategories } from "./helper/adminapicall";
+import { getCategories,removeCategory } from "./helper/adminapicall";
 import AdminLeftPanel from "./AdminLeftPanel";
 
 const ManageCategories = () => {
@@ -24,41 +24,68 @@ const ManageCategories = () => {
     preload();
   }, []);
 
-  return (
-    <Base title="Welcome admin" description="Manage products here">
-      <h2 className="mb-4">All products:</h2>
-      <Link className="btn btn-info" to={`/admin/dashboard`}>
-        <span className="">Admin Home</span>
+    const updateButton = categories => {
+    return (
+      <Link
+        className="btn btn-success"
+        to={`/admin/categories/update/${categories._id}`}
+      >
+       Update
       </Link>
+    )};
+
+      const deleteThiscategories = productId => {
+    removeCategory(productId, user._id, token).then(data => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        preload();
+      }
+    });
+  };
+
+      const deleteButton = categories => {
+    return (
+      <button
+        onClick={() => {
+          deleteThiscategories(categories._id);
+        }}
+        className="btn btn-danger"
+      >
+      Delete
+      </button>
+    )};
+
+  return (
+    <Base title="Welcome admin" description="Manage categories here">
       <div className="row">
-        <div className="col-3"> 
+      <div className="col-lg-3 col-m-3 col-s-12 mb-3"> 
       <AdminLeftPanel />
       </div>
-        <div className="col-9">
-          <h2 className="text-center text-dark my-3">Total 3 products</h2>
+        <div className=" border col-lg-9 col-m-9 col-s-12 ">
+          <h2 className="text-center text-dark my-3">Total {categories.length} categories</h2>
+          <table className="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Update details</th>
+          <th scope="col">Delete Product</th>
+        </tr>
+      </thead>
+      <tbody>
           {categories.map((category, index) => {
             return (
-              <div className="row text-center mb-2 ">
-            <div className="col-7">
-              <h6 className="text-dark text-left">{category.name}</h6>
-            </div>
-            <div className="col-1">
-              <Link
-                className="btn btn-success"
-                to={`/admin/product/update/productId`}
-              >
-                <span className="">Update</span>
-              </Link>
-            </div>
-            <div className="col-1">
-              <button onClick={() => {}} className="btn btn-danger">
-                Delete
-              </button>
-            </div>
-          </div>
+              <tr key={index}>
+          <th key={index} scope="row">{index+1}</th>
+          <td>{category.name}</td>
+          <td>{updateButton(category)}</td>
+          <td>{deleteButton(category)}</td>
+        </tr>
             );
           })}
-          
+          </tbody>
+         </table>
         </div>
       </div>
     </Base>
