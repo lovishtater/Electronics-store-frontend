@@ -45,7 +45,7 @@ export const removeCategory = (userId, token, categoryId) => {
 //products calls
 
 //create a product
-export const createaProduct = ( product,userId, token) => {
+export const createaProduct = (userId, token, product) => {
   return fetch(`${API}/product/create/${userId}`, {
     method: "POST",
     headers: {
