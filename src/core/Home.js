@@ -4,8 +4,6 @@ import "../styles.css";
 import Base from "./Base";
 import Card from "./ProductCard";
 import { getProducts } from "./helper/coreapicalls";
-import { Box, Grid, Container, Paper } from "@material-ui/core";
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -32,42 +30,57 @@ export default function Home() {
     return (
       loading && (
         <div className="col-12 ">
-        <CircularProgress color="secondary" />
+          <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
         </div>
       )
     );
   };
 
   return (
-    <Base title="Home Page" description="Welcome to the Vijay Electronics">
-    <Box>
-      {/* <Grid container xs={4}>
-        <Paper>Item 1</Paper>
-        <Paper>Item 2</Paper>
-        <Paper>Item 3</Paper>
-        <Paper>Item 1</Paper>
-        <Paper>Item 2</Paper>
-        <Paper>Item 3</Paper>
-      
-      </Grid>
-       <Grid item xs={8}> */}
-        <div className="row text-center">
-        <h1 className="text-dark">All our products</h1>
-       {loadingMessage()}
-        <div className="row">
-          {products.map((product, index) => {
-            return (
-              <div key={index} className="col-4 mb-4">
-                <Card product={product} />
-              </div>
-            );
-          })}
+    <Base>
+      <section class="py-5" style={{ backgroundColor: "#4D96FF" }}>
+        <div class="container">
+          <div class="row align-items-center py-5">
+            <div class="col-md-6 text-white">
+              <h1>Vijay Electronics</h1>
+              <p>
+                Vijay Electronics is one stop destination for home appliance
+                shopping in India.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <img
+                src="https://i.ibb.co/McSRhck/electronics-store.png"
+                alt="About Hero"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-      {/* </Grid> */}
-    </Box>
-      
+      </section>
+      <section class="container py-5">
+        <div class="row text-center pt-3 pb-3">
+          <div class="col-lg-6 m-auto">
+            <h1 class="h1">All our products</h1>
+            <p>Shop for Home Appliances, Laptops & Accessories online at Vijay Electronics</p>
+          </div>
+        </div>
 
+        <div className="row text-center">
+          {loadingMessage()}
+          <div className="row">
+            {products.map((product, index) => {
+              return (
+                <div key={index} className="mb-4 col-md-6 col-lg-4 col-sm-12">
+                  <Card product={product} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+      {/* </Grid> */}
     </Base>
   );
 }
