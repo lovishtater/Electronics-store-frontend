@@ -3,21 +3,23 @@ import Contact from "./contact";
 import Menu from "./Menu";
 
 const Base = ({
-  title = "My Title",
-  description = "My desription",
-  className = "bg-light text-dark p-4",
+  title ,
+  description ,
+  className ,
   children
 }) => (
   <div>
     <Menu />
-    <div className="container-fluid">
+    {/* <div className="container-fluid"> */}
+      {title && (
       <div className="jumbotron bg-light text-dark text-center">
         <h2 className="display-4">{title}</h2>
         <p className="lead">{description}</p>
       </div>
+      )}
       <div className={className}>{children}</div>
-    </div>
-    <Contact/>
+    {/* </div> */}
+    
     <footer className="footer bg-gradient-info text-white mt-auto py-3">
       <div className="container-fluid bg-info text-center py-3">
         <h4>
@@ -25,9 +27,7 @@ const Base = ({
         </h4>
         {/* <button className="btn btn-warning btn-lg">Contact Us</button> */}
       </div>
-      <div className="container">
-        
-      </div>
+
     </footer>
   </div>
 );

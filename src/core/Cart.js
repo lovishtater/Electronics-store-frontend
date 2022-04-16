@@ -42,8 +42,8 @@ const Cart = () => {
 
   return (
     <Base title="Cart Page" description="Ready to checkout">
-      <div className="row text-center">
-        <div className="col-6">
+      <div className="row text-center d-flex justify-content-evenly">
+        <div className="col-4 center">
           {products.length > 0 ? (
             loadAllProducts(products)
           ) : (
