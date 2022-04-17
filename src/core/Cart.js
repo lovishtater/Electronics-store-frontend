@@ -51,11 +51,7 @@ const Cart = () => {
           )}
         </div>
         <div className="col-6">
-         
-           <StripeCheckout
-             products={products}
-             setReload={setReload}
-           />
+          <StripeCheckout products={products} setReload={setReload} />
           {/* <Paymentb products={products} setReload={setReload} /> */}
         </div>
       </div>

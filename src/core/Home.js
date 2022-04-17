@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
 // import { API } from "../backend";
+import Contact from "./contact";
+import Brands from "./brands";
 import Base from "./Base";
 import Card from "./ProductCard";
 import { getProducts } from "./helper/coreapicalls";
@@ -43,8 +45,8 @@ export default function Home() {
       <section class="py-5" style={{ backgroundColor: "#4D96FF" }}>
         <div class="container">
           <div class="row align-items-center py-5">
-            <div class="col-md-6 text-white">
-              <h1>Vijay Electronics</h1>
+            <div class="col-md-6 text-white text-center">
+              <h1 class="center font-weight-bold">Vijay Electronics</h1>
               <p>
                 Vijay Electronics is one stop destination for home appliance
                 shopping in India.
@@ -54,6 +56,7 @@ export default function Home() {
               <img
                 src="https://i.ibb.co/McSRhck/electronics-store.png"
                 alt="About Hero"
+                class="img-fluid"
               />
             </div>
           </div>
@@ -88,7 +91,7 @@ export default function Home() {
           <div class="col-md-6 col-lg-3 pb-5">
             <div class="h-100 py-5 services-icon-wap shadow">
               <div class="h1 text-info text-center">
-                <i class="fa fa-service"></i>
+                <i class="fa fa-wrench"></i>
               </div>
               <h2 class="h5 mt-4 text-center">Repair</h2>
             </div>
@@ -127,8 +130,10 @@ export default function Home() {
             })}
           </div>
         </div>
-      </section>
 
+      </section>
+      <Brands />
+      <Contact />
       {/* </Grid> */}
     </Base>
   );

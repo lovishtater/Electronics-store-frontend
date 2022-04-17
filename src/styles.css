@@ -8,13 +8,6 @@ body {
   background: #fff;
 }
 
-/* footer {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  left: 0px;
-} */
-
 .map {
   border:0;
   width: 100%;
@@ -41,7 +34,7 @@ body {
 }
 
 .logo{
-  animation: rotation 3s infinite linear;
+  animation: rotation 5s infinite linear;
 }
 
 @keyframes rotation {
