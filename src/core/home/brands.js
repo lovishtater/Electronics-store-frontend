@@ -39,40 +39,32 @@ const Brands = () => {
                     <div class="carousel-item active">
                       <div class="row">
                         <div class="col-3 p-md-5">
-                          <a href="#">
                             <img
                               class="img-fluid brand-img"
                               src="https://i.ibb.co/xqPcR48/dffedw.png"
                               alt="Brand Logo"
                             />
-                          </a>
                         </div>
                         <div class="col-3 p-md-5">
-                          <a href="#">
                             <img
                               class="img-fluid brand-img"
                               src="https://i.ibb.co/MkzVRpG/1200px-Samsung-Logo-svg.png"
                               alt="Brand Logo"
                             />
-                          </a>
                         </div>
                         <div class="col-3 p-md-5">
-                          <a href="#">
                             <img
                               class="img-fluid brand-img"
                               src="https://i.ibb.co/RydZn0q/lloyd-logo-6-FFE9-A0779-seeklogo-com.png"
                               alt="Brand Logo"
                             />
-                          </a>
                         </div>
                         <div class="col-3 p-md-5">
-                          <a href="#">
                             <img
                               class="img-fluid brand-img"
                               src="https://i.ibb.co/ckTRxSY/unnamed-1-removebg-preview.png"
                               alt="Brand Logo"
                             />
-                          </a>
                         </div>
                       </div>
                     </div>
@@ -80,80 +72,64 @@ const Brands = () => {
                     <div class="carousel-item">
                       <div class="row">
                         <div class="col-3 p-md-5">
-                          <a href="#">
                             <img
                               class="img-fluid brand-img"
                               src="https://i.ibb.co/748Vgxc/PNGPIX-COM-Whirlpool-Logo-PNG-Transparent.png"
                               alt="Brand Logo"
                             />
-                          </a>
                         </div>
                         <div class="col-3 p-md-5">
-                          <a href="#">
                             <img
                               class="img-fluid brand-img"
                               src="https://i.ibb.co/ckgnywn/png-clipart-logo-hitachi-high-technologies-america-manufacturing-others-electronics-text-removebg-pr.png"
                               alt="Brand Logo"
                             />
-                          </a>
                         </div>
                         <div class="col-3 p-md-5">
-                          <a href="#">
                             <img
                               class="img-fluid brand-img"
                               src="https://i.ibb.co/qYkcXXp/unnamed-2.png"
                               alt="Brand Logo"
                             />
-                          </a>
                         </div>
                         <div class="col-3 p-md-5">
-                          <a href="#">
                             <img
                               class="img-fluid brand-img"
                               src="https://i.ibb.co/0ZBSS6X/175-1755101-o-general-hd-png-download-removebg-preview.png"
                               alt="Brand Logo"
                             />
-                          </a>
                         </div>
                       </div>
                     </div>
                     <div class="carousel-item">
                       <div class="row">
                         <div class="col-3 p-md-5">
-                          <a href="#">
                             <img
                               class="img-fluid brand-img"
                               src="https://i.ibb.co/MVDTFd3/ifb-logo-CDA98-EC536-seeklogo-com.png"
                               alt="Brand Logo"
                             />
-                          </a>
                         </div>
                         <div class="col-3 p-md-5">
-                          <a href="#">
                             <img
                               class="img-fluid brand-img"
                               src="https://i.ibb.co/xqPcR48/dffedw.png"
                               alt="Brand Logo"
                             />
-                          </a>
                         </div>
                         <div class="col-3 p-md-5">
-                          <a href="#">
                             <img
                               class="img-fluid brand-img"
                               src="https://i.ibb.co/ckgnywn/png-clipart-logo-hitachi-high-technologies-america-manufacturing-others-electronics-text-removebg-pr.png"
                               alt="Brand Logo"
                             />
-                          </a>
                         </div>
                         <div class="col-3 p-md-5">
-                          <a href="#">
                             <img
                               class="img-fluid brand-img"
                               src="https://i.ibb.co/qYkcXXp/unnamed-2.png"
                               alt="Brand Logo"
                             />
-                          </a>
                         </div>
                       </div>
                     </div>

@@ -48,7 +48,7 @@ export default function Home() {
 
   return (
     <Base>
-    {/* <IntroContainer />
+    <IntroContainer />
     <FeatureCards />
       <section class="container py-2">
         <div class="row text-center pt-3 pb-3">
@@ -72,9 +72,9 @@ export default function Home() {
             })}
           </div>
         </div>
-      </section> */}
+      </section>
       <Brands />
-      {/* <Contact /> */}
+      <Contact />
     </Base>
   );
 }

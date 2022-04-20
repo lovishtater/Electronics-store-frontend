@@ -43,7 +43,6 @@ const contact = () => {
 
           <div className="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="#" method="post" role="form" className="php-email-form">
               <div className="row">
                 <div className="col-md-6 form-group">
                   <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" required/>
@@ -64,7 +63,6 @@ const contact = () => {
                 <div className="sent-message">Your message has been sent. Thank you!</div>
               </div> */}
               <div ><button className="text-center btn btn-block btn-outline-success mt-2 mb-2" type="submit">Send Message</button></div>
-            </form>
 
           </div>
 

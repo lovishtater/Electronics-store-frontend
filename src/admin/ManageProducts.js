@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { isAutheticated } from "../auth/helper";
 import { getProducts, deleteProduct } from "./helper/adminapicall";
 import AdminLeftPanel from "./AdminLeftPanel";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const ManageProducts = () => {
