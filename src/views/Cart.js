@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles.css";
 import { API } from "../backend";
 import Base from "../core/Base";
-import Card from "../core/ProductCard";
+import Card from "../core/CartProductCard";
 import { loadCart } from "../core/helper/cartHelper";
 import StripeCheckout from "../core/StripeCheckout";
 // import Paymentb from "./Paymentb";
@@ -42,15 +42,27 @@ const Cart = () => {
 
   return (
     <Base title="Cart Page" description="Ready to checkout">
-      <div className="row text-center d-flex justify-content-evenly">
-        <div className="col-4 center">
+      <div className="row text-center"
+        style={{
+          width: "100%",
+          display: "flex",  
+          justifyContent: "center",
+          alignItems: "center",
+        }} >
+        <div className="col-lg-4 col-sm-12 center"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        >
           {products.length > 0 ? (
             loadAllProducts(products)
           ) : (
             <h4>No products</h4>
           )}
         </div>
-        <div className="col-6">
+        <div className="col-md-4 col-lg-4 col-sm-12">
           <StripeCheckout products={products} setReload={setReload} />
           {/* <Paymentb products={products} setReload={setReload} /> */}
         </div>

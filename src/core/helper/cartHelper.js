@@ -1,13 +1,18 @@
 export const addItemToCart = (item, next) => {
   let cart = [];
+  let contains = false;
   if (typeof window !== undefined) {
     if (localStorage.getItem("cart")) {
       cart = JSON.parse(localStorage.getItem("cart"));
     }
-    cart.push({
-      ...item,
-      count: 1
-    });
+      cart.forEach(cartItem => {
+        if (cartItem._id === item._id) {
+          cartItem.count += 1;
+          contains = true;
+        }});
+      if (!contains) {
+        cart.push({ ...item, count: 1 });
+      }
     localStorage.setItem("cart", JSON.stringify(cart));
     next();
   }

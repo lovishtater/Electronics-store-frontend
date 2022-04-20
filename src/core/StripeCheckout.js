@@ -24,9 +24,11 @@ const StripeCheckout = ({
 
     const getFinalPrice = () => {
         let amount = 0 ;
+        console.log(products);
         products.map(product => {
-            amount = amount + product.price;
+            amount = (product.price * product.count) + amount;
         });
+        console.log(amount);
         return amount;
     };
 
