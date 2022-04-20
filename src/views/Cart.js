@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
 import { API } from "../backend";
-import Base from "./Base";
-import Card from "./ProductCard";
-import { loadCart } from "./helper/cartHelper";
-import StripeCheckout from "./StripeCheckout";
+import Base from "../core/Base";
+import Card from "../core/ProductCard";
+import { loadCart } from "../core/helper/cartHelper";
+import StripeCheckout from "../core/StripeCheckout";
 // import Paymentb from "./Paymentb";
 
 const Cart = () => {

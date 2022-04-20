@@ -33,6 +33,11 @@ body {
   color: #fff;
 }
 
+.btn-primary{
+  background-color: #233DFF;
+  color: #fff;
+}
+
 .logo{
   animation: rotation 5s infinite linear;
 }

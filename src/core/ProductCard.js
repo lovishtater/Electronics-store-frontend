@@ -6,16 +6,17 @@ import '../styles.css';
 import { API } from "../backend";
 
 
+
 const ProductCard = ({
   product,
   addtoCart = true,
   removeFromCart = false,
   setReload = f => f,
-  //   function(f){return f}
   reload = undefined
 }) => {
   const [redirect, setRedirect] = useState(false);
   const [count, setCount] = useState(product.count);
+
 
   const addToCart = () => {
     addItemToCart(product, () => setRedirect(true));
@@ -27,6 +28,25 @@ const ProductCard = ({
       return <Redirect to="/cart" />;
     }
   };
+ const productAddedToCart = () => {
+   return (
+             <div class="alert alert-success d-flex align-items-center" role="alert">
+          <svg
+            class="bi flex-shrink-0 me-2"
+            width="24"
+            height="24"
+            role="img"
+            aria-label="Success:"
+          >
+          </svg>
+          <div>
+            <p class="mb-0">
+              Product added to cart successfully.
+            </p>
+          </div>
+        </div>
+        )
+  }
 
 
 
@@ -55,7 +75,7 @@ const ProductCard = ({
         <div class="d-flex justify-content-between">
           <div>
             <p>{product.name}</p>
-            <p class="small  font-weight-normal text-wrap" >
+            <p class="small  font-weight-normal text-wrap">
               {product.description.substring(0, 150) + "..."}
             </p>
           </div>
@@ -87,6 +107,7 @@ const ProductCard = ({
             </button>
           )}
         </div>
+
       </div>
     </div>
   );

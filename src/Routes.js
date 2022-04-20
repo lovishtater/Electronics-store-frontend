@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "./core/Home";
+import Home from "./views/Home";
 import Signup from "./user/Signup";
 import Signin from "./user/Signin";
 import AdminRoute from "./auth/helper/AdminRoutes";
@@ -12,8 +12,9 @@ import ManageCategories from "./admin/ManageCategories";
 import AddProduct from "./admin/AddProduct";
 import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
-import Cart from "./core/Cart";
+import Cart from "./views/Cart";
 import Orders from "./admin/Orders";
+import Products from "./views/Products";
 
 const Routes = () => {
   return (
@@ -23,6 +24,7 @@ const Routes = () => {
         <Route path="/signup" exact component={Signup} />
         <Route path="/signin" exact component={Signin} />
         <Route path="/cart" exact component={Cart} />
+        <Route path="/products" exact component={Products} />
         <PrivateRoute path="/user/dashboard" exact component={UserDashBoard} />
         <AdminRoute path="/admin/dashboard" exact component={AdminDashBoard} />
         <AdminRoute

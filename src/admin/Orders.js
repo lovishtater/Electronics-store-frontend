@@ -1,7 +1,6 @@
 import React from 'react'
 import Base from '../core/Base';
 import AdminLeftPanel from "./AdminLeftPanel";
-import MuiAlert from '@material-ui/lab/Alert';
 
 
 const Orders = () => {
@@ -17,7 +16,10 @@ const Orders = () => {
       <AdminLeftPanel />
       </div>
         <div className=" col-lg-9 col-m-9 col-s-12 "> 
-        <MuiAlert variant='filled' severity='error'  >Under maintainance</MuiAlert>
+        <div className="alert alert-danger">
+        <h1>Orders</h1>
+        <p> Orders page is under construction</p>
+        </div>
         </div>
         </div>
       </Base>

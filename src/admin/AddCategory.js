@@ -4,8 +4,6 @@ import { isAutheticated } from "../auth/helper";
 import { Link } from "react-router-dom";
 import { createCategory } from "./helper/adminapicall";
 import AdminLeftPanel from "./AdminLeftPanel";
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
 
 const AddCategory = () => {
   const [name, setName] = useState("");
@@ -44,16 +42,10 @@ const AddCategory = () => {
     });
   };
 
-  const Alert = (props) => {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
-
   const successMessage = () => {
-      return <Snackbar open={success} autoHideDuration={6000}  >
-              <Alert  severity="success">
-              Category created successfully!
-            </Alert>
-          </Snackbar>
+    if (success) {
+      return <h4 className="text-success">Category Created successfully!!</h4>;
+    }
   };
 
   const warningMessage = () => {
