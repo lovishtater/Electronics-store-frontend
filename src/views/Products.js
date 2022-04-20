@@ -16,7 +16,7 @@ const Products = () => {
       if (data.error) {
         setError(data.error);
       } else {
-        console.log(data);
+        setProducts(data);
       }
     });
     setLoading(false);
@@ -53,7 +53,7 @@ const Products = () => {
   return (
     <Base>
       <section class="container py-2">
-        <div class="row text-center pt-3 pb-3">
+        <div class="row pt-3 pb-3">
           <div class="col-lg-6 m-auto">
             <h1 class="h1">All our products</h1>
             <p>
@@ -61,34 +61,64 @@ const Products = () => {
               Electronics
             </p>
           </div>
-          <div class="col-lg-6 m-auto">
-              <input
-                class="form-control me-4"
-                type="search"
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button
-                class="btn btn-rounded text-white"
-                onClick={() => searchP()}
-                style={{ backgroundColor: "#233DFF" }}
-              >
-                Search
-              </button>
+          <div class="col-lg-6 m-auto" style={{ display: "flex" }}>
+            <input
+              class="form-control me-4"
+              type="search"
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="btn btn-rounded text-white m-1"
+              onClick={() => searchP()}
+              style={{ backgroundColor: "#233DFF" }}
+            >
+              Search
+            </button>
+            <button
+              class="btn btn-rounded btn-outline-danger m-1"
+              onClick={() => loadAllProduct()}
+            >
+              reset
+            </button>
           </div>
         </div>
 
         <div className="row text-center">
           {loadingMessage()}
-          <div className="row">
-            {products.map((product, index) => {
-              return (
-                <div key={index} className="mb-4 col-md-6 col-lg-4 col-sm-12">
-                  <Card product={product} />
-                </div>
-              );
-            })}
+          <div className="row m-auto">
+            {products && products.length > 0 ? (
+              products.map((product, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="mb-4 col-md-6 col-lg-4 col-sm-12 m-auto"
+                  >
+                    <Card product={product} />
+                  </div>
+                );
+              })
+            ) : (
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "column",
+                }}
+              >
+                <img
+                  className="img-fluid center"
+                  src="https://i.ibb.co/GxfNHGR/noresult.gif"
+                  alt="noresult"
+                  style={{
+                    height: "40%",
+                    width: "auto",
+                  }}
+                />
+                <h1>No products</h1>
+              </div>
+            )}
           </div>
         </div>
       </section>

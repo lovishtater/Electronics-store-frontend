@@ -63,13 +63,12 @@ const ProductCard = ({
             borderTopLeftRadius: "15px",
             borderTopRightRadius: "15px",
             objectFit: "cover",
+            width: "100%",
+            height: "200px",
           }}
           class="img-fluid"
           alt="Laptop"
         />
-        <a href="#!">
-          <div class="mask"></div>
-        </a>
       </div>
       <div class="card-body pb-0">
         <div class="d-flex justify-content-between">
@@ -107,7 +106,6 @@ const ProductCard = ({
             </button>
           )}
         </div>
-
       </div>
     </div>
   );
