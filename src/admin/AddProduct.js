@@ -57,7 +57,7 @@ const AddProduct = () => {
     setValues({ ...values, error: "", loading: true });
     createaProduct(user._id, token, formData).then(data => {
       if (data.error) {
-        setValues({ ...values, error: data.error });
+        setValues({ ...values, error: data });
       } else {
         setValues({
           ...values,
@@ -88,11 +88,21 @@ const AddProduct = () => {
     </div>
   );
 
+  const errorMessage = () => (
+    <div
+      className="alert alert-danger mt-3"
+      style={{ display: error ? "" : "none" }}
+    >
+      <h6>{error.error}</h6>
+      <p>{error.message}</p>
+    </div>
+  );
+
   const createProductForm = () => (
     <form>
       <span>Post photo</span>
-      <div className="form-group">
-        <label className="btn rounded btn-block btn-success">
+      <div className="form-group mb-2">
+        <label className="btn rounded">
           <input
             onChange={handleChange("photo")}
             type="file"
@@ -102,7 +112,7 @@ const AddProduct = () => {
           />
         </label>
       </div>
-      <div className="form-group">
+      <div className="form-group mb-2">
         <input
           onChange={handleChange("name")}
           name="photo"
@@ -111,7 +121,7 @@ const AddProduct = () => {
           value={name}
         />
       </div>
-      <div className="form-group">
+      <div className="form-group mb-2">
         <textarea
           onChange={handleChange("description")}
           name="photo"
@@ -120,7 +130,7 @@ const AddProduct = () => {
           value={description}
         />
       </div>
-      <div className="form-group">
+      <div className="form-group mb-2">
         <input
           onChange={handleChange("price")}
           type="number"
@@ -129,7 +139,7 @@ const AddProduct = () => {
           value={price}
         />
       </div>
-      <div className="form-group">
+      <div className="form-group mb-2">
         <select
           onChange={handleChange("category")}
           className="form-control"
@@ -144,7 +154,7 @@ const AddProduct = () => {
             ))}
         </select>
       </div>
-      <div className="form-group">
+      <div className="form-group mb-2">
         <input
           onChange={handleChange("stock")}
           type="number"
@@ -179,6 +189,7 @@ const AddProduct = () => {
       </div>
         <div className=" border col-lg-9 col-m-9 col-s-12 ">
           {successMessage()}
+          {errorMessage()}
           {createProductForm()}
         </div>
       </div>
