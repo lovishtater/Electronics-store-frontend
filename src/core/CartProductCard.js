@@ -16,8 +16,6 @@ const ProductCard = ({
   reload = undefined
 }) => {
   const [redirect, setRedirect] = useState(false);
-  const [count, setCount] = useState(product.count);
-
 
   const addToCart = () => {
     addItemToCart(product, () => setRedirect(true));
@@ -29,33 +27,15 @@ const ProductCard = ({
       return <Redirect to="/cart" />;
     }
   };
- const productAddedToCart = () => {
-   return (
-             <div class="alert alert-success d-flex align-items-center" role="alert">
-          <svg
-            class="bi flex-shrink-0 me-2"
-            width="24"
-            height="24"
-            role="img"
-            aria-label="Success:"
-          >
-          </svg>
-          <div>
-            <p class="mb-0">
-              Product added to cart successfully.
-            </p>
-          </div>
-        </div>
-        )
-  }
+
 
 
 
   return (
-    <div class="card mb-3" style={{ maxWidth: "540px", borderRadius: "15px" }}>
-      <div class="row g-0">
+    <div className="card mb-3" style={{maxWidth: "540px", borderRadius: "15px"}}>
+      <div className="row g-0">
         <div
-          class="col-md-4"
+          className="col-md-4"
           style={{
             backgroundImage: `url(${
               product
@@ -64,24 +44,20 @@ const ProductCard = ({
             })`,
             backgroundSize: "cover",
           }}
-        >
-        </div>
-        <div class="col-md-8 p-1">
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="col-10`">
-              <h6 class="card-title">{product.name}</h6>
+        ></div>
+        <div className="col-md-8 p-1">
+          <div className="d-flex justify-content-between align-items-center">
+            <div className="col-10`">
+              <h6 className="card-title">{product.name}</h6>
             </div>
-            <div class="col-2">
-              <p class="card-text">X {product.count}</p>
+            <div className="col-2">
+              <p className="card-text">X {product.count}</p>
             </div>
           </div>
-          <div class="d-flex justify-content-between align-items-center">
+          <div className="d-flex justify-content-between align-items-center">
             <p>{"$" + product.price}</p>
             {addtoCart && (
-              <button
-                onClick={addToCart}
-                className="btn btn-block btn-outline-dark btn-sm"
-              >
+              <button onClick={addToCart} className="btn btn-block btn-outline-dark btn-sm">
                 Add to Cart
               </button>
             )}
@@ -93,7 +69,7 @@ const ProductCard = ({
                 }}
                 className="btn btn-sm"
               >
-                <FontAwesomeIcon icon={faTrash} style={{ color: "red" }} />
+                <FontAwesomeIcon icon={faTrash} style={{color: "red"}} />
               </button>
             )}
           </div>
@@ -105,8 +81,8 @@ const ProductCard = ({
 
 export default ProductCard;
 
-    // <div class="card" style={{ borderRadius: "15px" }}>
-    //   <div class="bg-image hover-zoom ripple rounded ripple-surface">
+    // <div className="card" style={{ borderRadius: "15px" }}>
+    //   <div className="bg-image hover-zoom ripple rounded ripple-surface">
     //     <img
     //       src={
     //         product
@@ -120,25 +96,25 @@ export default ProductCard;
     //         width: "100%",
     //         height: "200px",
     //       }}
-    //       class="img-fluid"
+    //       className="img-fluid"
     //       alt="Laptop"
     //     />
     //   </div>
-    //   <div class="card-body pb-0">
-    //     <div class="d-flex justify-content-between">
+    //   <div className="card-body pb-0">
+    //     <div className="d-flex justify-content-between">
     //       <div>
     //         <p></p>
-    //         <p class="small  font-weight-normal text-wrap">
+    //         <p className="small  font-weight-normal text-wrap">
     //           {product.description.substring(0, 150) + "..."}
     //         </p>
     //       </div>
     //       <div>
-    //         <p class="small text-muted">Rated 4.0/5</p>
+    //         <p className="small text-muted">Rated 4.0/5</p>
     //       </div>
     //     </div>
     //   </div>
-    //   <div class="card-body">
-    //     <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+    //   <div className="card-body">
+    //     <div className="d-flex justify-content-between align-items-center pb-2 mb-1">
     //       <p>{"$" + product.price}</p>
     //       {addtoCart && (
     //         <button

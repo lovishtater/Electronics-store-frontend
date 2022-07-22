@@ -15,11 +15,15 @@ const ProductCard = ({
   reload = undefined
 }) => {
   const [redirect, setRedirect] = useState(false);
-  const [count, setCount] = useState(product.count);
+  const [addToCartSuccess, setAddToCartSuccess] = useState(false);
 
 
   const addToCart = () => {
     addItemToCart(product, () => setRedirect(true));
+    setAddToCartSuccess(true);
+    setTimeout(() => {
+      setAddToCartSuccess(false);
+    }, 500);
     getARedirect(redirect);
   };
 
@@ -30,23 +34,20 @@ const ProductCard = ({
   };
  const productAddedToCart = () => {
    return (
-             <div className="alert alert-success d-flex align-items-center" role="alert">
-          <svg
-            className="bi flex-shrink-0 me-2"
-            width="24"
-            height="24"
-            role="img"
-            aria-label="Success:"
-          >
-          </svg>
-          <div>
-            <p className="mb-0">
-              Product added to cart successfully.
-            </p>
-          </div>
-        </div>
-        )
-  }
+         <div className="alert alert-success d-flex align-items-center" role="alert">
+           <svg
+             className="bi flex-shrink-0 me-2"
+             width="24"
+             height="24"
+             role="img"
+             aria-label="Success:"
+           ></svg>
+           <div>
+             <p className="mb-0">Product added to cart successfully.</p>
+           </div>
+         </div>
+   );
+ };
 
 
 
@@ -83,6 +84,7 @@ const ProductCard = ({
           </div>
         </div>
       </div>
+      {addToCartSuccess ? productAddedToCart() : (
       <div className="card-body">
         <div className="d-flex justify-content-between align-items-center pb-2 mb-1">
           <p>{"$" + product.price}</p>
@@ -107,6 +109,7 @@ const ProductCard = ({
           )}
         </div>
       </div>
+        )}
     </div>
   );
 };

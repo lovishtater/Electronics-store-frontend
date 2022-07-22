@@ -18,7 +18,7 @@ const Cart = () => {
   const loadAllProducts = products => {
     return (
       <div>
-        <h2>This section is to load products</h2>
+        <h2>All the products in your cart</h2>
         {products.map((product, index) => (
           <Card
             key={index}
@@ -49,14 +49,14 @@ const Cart = () => {
           justifyContent: "center",
           alignItems: "center",
         }} >
-        <div className="col-lg-4 col-sm-12 center"
+        <div className="col-lg-6 col-sm-12 center"
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
         >
-          {products.length > 0 ? (
+          {products?.length > 0 ? (
             loadAllProducts(products)
           ) : (
             <h4>No products</h4>
@@ -64,7 +64,6 @@ const Cart = () => {
         </div>
         <div className="col-md-4 col-lg-4 col-sm-12">
           <StripeCheckout products={products} setReload={setReload} />
-          {/* <Paymentb products={products} setReload={setReload} /> */}
         </div>
       </div>
     </Base>
