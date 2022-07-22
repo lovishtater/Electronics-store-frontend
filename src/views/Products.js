@@ -7,20 +7,22 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState("");
 
-  const searchP = async() => {
-    console.log(search);
+  const fetchProducts = async (query) => {
     setLoading(true);
-    await searchProducts(search).then((data) => {
+    if(query){
+    await searchProducts(query).then((data) => {
       if (data.error) {
         setError(data.error);
       } else {
         setProducts(data);
       }
     });
+    }else{
+      loadAllProduct();
+    }
     setLoading(false);
-  }
+  };
 
 
   const loadAllProduct = () => {
@@ -35,6 +37,20 @@ const Products = () => {
     setLoading(false);
   };
 
+  const debounce = (func, wait = 1000) => {
+    let timeout;
+    return (...value) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        func(value);
+      }, wait);
+    };
+  };
+
+  const handleSearch = debounce((value) => {
+    fetchProducts(value);
+  }, 1000);
+
   useEffect(() => {
     loadAllProduct();
   }, []);
@@ -43,8 +59,8 @@ const Products = () => {
     return (
       loading && (
         <div className="col-12 ">
-          <div class="spinner-border text-primary" role="status">
-            <span class="sr-only">Loading...</span>
+          <div className="spinner-border text-primary" role="status">
+            <span className="sr-only">Loading...</span>
           </div>
         </div>
       )
@@ -52,41 +68,29 @@ const Products = () => {
   };
   return (
     <Base>
-      <section class="container py-2">
-        <div class="row pt-3 pb-3">
-          <div class="col-lg-6 m-auto">
-            <h1 class="h1">All our products</h1>
+      <section className="container py-2">
+        <div className="row pt-3 pb-3">
+          <div className="col-lg-6 m-auto">
+            <h1 className="h1">All our products</h1>
             <p>
               Shop for Home Appliances, Laptops & Accessories online at Vijay
               Electronics
             </p>
           </div>
-          <div class="col-lg-6 m-auto" style={{ display: "flex" }}>
+          <div className="col-lg-6 m-auto" style={{ display: "flex" }}>
             <input
-              class="form-control me-4"
+              className="form-control me-4"
               type="search"
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => handleSearch(e.target.value)}
               placeholder="Search"
               aria-label="Search"
             />
-            <button
-              class="btn btn-rounded text-white m-1"
-              onClick={() => searchP()}
-              style={{ backgroundColor: "#233DFF" }}
-            >
-              Search
-            </button>
-            <button
-              class="btn btn-rounded btn-outline-danger m-1"
-              onClick={() => loadAllProduct()}
-            >
-              reset
-            </button>
           </div>
         </div>
 
         <div className="row text-center">
           {loadingMessage()}
+          {error && <div className="text-danger">{error}</div>}
           <div className="row m-auto">
             {products && products.length > 0 ? (
               products.map((product, index) => {
