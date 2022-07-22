@@ -24,11 +24,9 @@ const StripeCheckout = ({
 
     const getFinalPrice = () => {
         let amount = 0 ;
-        console.log(products);
         products.map(product => {
             amount = (product.price * product.count) + amount;
         });
-        console.log(amount);
         return amount;
     };
 
@@ -55,28 +53,27 @@ const StripeCheckout = ({
 
     const showStripe = () => {
     return isAutheticated() ? (
-        <StripeCheckoutButton
+      <StripeCheckoutButton
         stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
         token={makePayment}
-        amount={getFinalPrice()*100}
+        amount={getFinalPrice() * 100}
         name="Buy Products"
         shippingAddressS
         billingAddress
-        />
-       
-    ):(
-        <>
-        <h1>Please login to continue</h1>
+      />
+    ) : (
+      <div class="alert alert-warning" role="alert">
+        <h6>Please login to proceed payment</h6>
         <Link to="/signin">
-        <button className="btn btn-warning">Signin</button>
+          <button className="btn btn-warning">Signin</button>
         </Link>
-        </>
-    )
+      </div>
+    );
     }
     return (
         <div>
         <h3 >Stripe Checkout </h3>
-        <h2> Total cart value $ {getFinalPrice()}</h2>
+        <h4> Total cart value $ {getFinalPrice()}</h4>
         <h3>{showStripe()}</h3>
         </div>
     )

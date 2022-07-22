@@ -30,9 +30,9 @@ const ProductCard = ({
   };
  const productAddedToCart = () => {
    return (
-             <div class="alert alert-success d-flex align-items-center" role="alert">
+             <div className="alert alert-success d-flex align-items-center" role="alert">
           <svg
-            class="bi flex-shrink-0 me-2"
+            className="bi flex-shrink-0 me-2"
             width="24"
             height="24"
             role="img"
@@ -40,7 +40,7 @@ const ProductCard = ({
           >
           </svg>
           <div>
-            <p class="mb-0">
+            <p className="mb-0">
               Product added to cart successfully.
             </p>
           </div>
@@ -51,8 +51,8 @@ const ProductCard = ({
 
 
   return (
-    <div class="card" style={{ borderRadius: "15px" }}>
-      <div class="bg-image hover-zoom ripple rounded ripple-surface">
+    <div className="card" style={{ borderRadius: "15px" }}>
+      <div className="bg-image hover-zoom ripple rounded ripple-surface">
         <img
           src={
             product
@@ -66,25 +66,25 @@ const ProductCard = ({
             width: "100%",
             height: "200px",
           }}
-          class="img-fluid"
+          className="img-fluid"
           alt="Laptop"
         />
       </div>
-      <div class="card-body pb-0">
-        <div class="d-flex justify-content-between">
+      <div className="card-body pb-0">
+        <div className="d-flex justify-content-between">
           <div>
             <p>{product.name}</p>
-            <p class="small  font-weight-normal text-wrap">
+            <p className="small  font-weight-normal text-wrap">
               {product.description.substring(0, 150) + "..."}
             </p>
           </div>
           <div>
-            <p class="small text-muted">Rated 4.0/5</p>
+            <p className="small text-muted">Rated 4.0/5</p>
           </div>
         </div>
       </div>
-      <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+      <div className="card-body">
+        <div className="d-flex justify-content-between align-items-center pb-2 mb-1">
           <p>{"$" + product.price}</p>
           {addtoCart && (
             <button
@@ -113,7 +113,7 @@ const ProductCard = ({
 
 export default ProductCard;
     //old card
-    //  <div class="card-columns">
+    //  <div className="card-columns">
 
     // <div className="card text-light bg-info border border-white rounded ">
     //   <div className="card-header lead">{cartTitle}</div>

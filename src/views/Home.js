@@ -36,8 +36,8 @@ export default function Home() {
     return (
       loading && (
         <div className="col-12 ">
-          <div class="spinner-border text-primary" role="status">
-            <span class="sr-only">Loading...</span>
+          <div className="spinner-border text-primary" role="status">
+            <span className="sr-only">Loading...</span>
           </div>
         </div>
       )
@@ -50,10 +50,10 @@ export default function Home() {
     <Base>
     <IntroContainer />
     <FeatureCards />
-      <section class="container py-2">
-        <div class="row text-center pt-3 pb-3">
-          <div class="col-lg-6 m-auto">
-            <h1 class="h1">Best Selling products</h1>
+      <section className="container py-2">
+        <div className="row text-center pt-3 pb-3">
+          <div className="col-lg-6 m-auto">
+            <h1 className="h1">Best Selling products</h1>
             <p>
               Shop for Home Appliances, Laptops & Accessories online at Vijay
               Electronics

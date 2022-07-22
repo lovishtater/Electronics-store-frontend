@@ -12,7 +12,7 @@ const contact = () => {
         </div>
 
         <div>
-          <iframe title="map" className='map' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14476.817612115266!2d74.6257754!3d24.8910085!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb66e26e8cf396486!2sVijay%20Electronics!5e0!3m2!1sen!2sin!4v1620428700932!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>
+          <iframe title="map" className='map' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14476.817612115266!2d74.6257754!3d24.8910085!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb66e26e8cf396486!2sVijay%20Electronics!5e0!3m2!1sen!2sin!4v1620428700932!5m2!1sen!2sin" frameBorder="0" allowFullScreen></iframe>
         </div>
 
         <div className="row mt-5">

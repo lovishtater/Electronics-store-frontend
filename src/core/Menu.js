@@ -12,21 +12,21 @@ const currentTab = (history, path) => {
 
 const Menu = ({ history }) => (
   <nav
-    class="navbar navbar-expand-lg navbar-transparent"
+    className="navbar navbar-expand-lg navbar-transparent"
     style={{ backgroundColor: "#4D96FF" }}
   >
-    <div class="container-fluid mx-3 text-white">
-      <Link class="navbar-brand" to="/">
+    <div className="container-fluid mx-3 text-white">
+      <Link className="navbar-brand" to="/">
         <img
           src="https://i.ibb.co/bPTrFG6/VEELogo.png"
           width="50"
           height="50"
-          class="logo d-inline-block align-top"
+          className="logo d-inline-block align-top"
           alt="logo"
         />
       </Link>
       <button
-        class="btn navbar-toggler"
+        className="btn navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent"
@@ -39,36 +39,36 @@ const Menu = ({ history }) => (
             width="36"
             height="36"
             fill="white"
-            class="bi bi-list"
+            className="bi bi-list"
             viewBox="0 0 16 16"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
             />
           </svg>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <li className="nav-item">
             <Link
               style={currentTab(history, "/")}
-              class="nav-link text-white"
+              className="nav-link text-white"
               to="/"
             >
               Home
             </Link>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <Link
               style={currentTab(history, "/products")}
-              class="nav-link text-white"
+              className="nav-link text-white"
               to="/products"
             >
               Products
             </Link>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <Link
               style={currentTab(history, "/cart")}
               className="nav-link text-white"
@@ -100,7 +100,7 @@ const Menu = ({ history }) => (
             </li>
           )}
         </ul>
-        <ul class="navbar-nav ml-auto">
+        <ul className="navbar-nav ml-auto">
           {!isAutheticated() && (
             <Fragment>
               <li
@@ -146,8 +146,8 @@ const Menu = ({ history }) => (
 );
   
   export default withRouter(Menu);
-  // <nav class="navbar navbar-expand-lg navbar-light shadow">
-  //   <div class="container d-flex justify-content-between align-items-center">
+  // <nav className="navbar navbar-expand-lg navbar-light shadow">
+  //   <div className="container d-flex justify-content-between align-items-center">
   //     <Link
   //       style={currentTab(history, "/")}
   //       className="navbar-brand text-dark logo h1 align-self-center"
@@ -157,7 +157,7 @@ const Menu = ({ history }) => (
   //     </Link>
 
   //     <button
-  //       class="navbar-toggler border-0"
+  //       className="navbar-toggler border-0"
   //       type="button"
   //       data-bs-toggle="collapse"
   //       data-bs-target="#templatemo_main_nav"
@@ -165,16 +165,16 @@ const Menu = ({ history }) => (
   //       aria-expanded="false"
   //       aria-label="Toggle navigation"
   //     >
-  //       <span class="navbar-toggler-icon"></span>
+  //       <span className="navbar-toggler-icon"></span>
   //     </button>
 
   //     <div
-  //       class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+  //       className="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
   //       id="templatemo_main_nav"
   //     >
-  //       <div class="flex-fill">
-  //         <ul class="nav navbar-nav d-flex justify-content-evenly mx-lg-auto">
-            // <li class="nav-item">
+  //       <div className="flex-fill">
+  //         <ul className="nav navbar-nav d-flex justify-content-evenly mx-lg-auto">
+            // <li className="nav-item">
             //   <Link
             //     style={currentTab(history, "/cart")}
             //     className="nav-link"
@@ -183,7 +183,7 @@ const Menu = ({ history }) => (
             //     Cart
             //   </Link>
             // </li>
-            // <li class="nav-item">
+            // <li className="nav-item">
             //   <Link
             //     style={currentTab(history, "/about")}
             //     className="nav-link"
